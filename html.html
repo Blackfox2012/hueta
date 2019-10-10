@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<script> 
+
+
+        function getMobileOperatingSystem() {
+           var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+           if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) )
+           {
+              return 'iOS';
+           }
+           else if( userAgent.match( /Android/i ) )
+           {
+              return 'Android';
+           }
+           else
+           {
+              return 'unknown';
+           }
+        }
+
+        function onLoad(){
+           var urlLink1 = "http://www.instagram.com/twitchhubclips";
+           switch(getMobileOperatingSystem()){
+               case 'Android':
+                    urlLink1 = "instagram://user?username=twitchhubclips";
+                    break;
+               case 'iOS':
+                    urlLink1 = "instagram://user?username=twitchhubclips ";
+                    break;
+               default:
+                    break;
+            }
+           
+		   
+		  
+			location.replace(urlLink1);
+		   
+		   
+        }
+        window.onload = onLoad;
+        </script>
+
+
+
+
+<body>
+</body>
+</html>
